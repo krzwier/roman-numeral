@@ -7,6 +7,7 @@ public final class RomanNumeral {
     private final char TEN = 'X';
     private final char FIFTY = 'L';
     private final char ONE_HUNDRED = 'C';
+    private final char FIVE_HUNDRED = 'D';
 
 	public String DecimalToRoman(int i) {
 		if (i == 1) {
@@ -21,7 +22,10 @@ public final class RomanNumeral {
         if (i == 50) {
             return String.valueOf(FIFTY);
         }
-        return String.valueOf(ONE_HUNDRED);
+        if (i == 100) {
+            return String.valueOf(ONE_HUNDRED);
+        }
+        return String.valueOf(FIVE_HUNDRED);
 	}
 
 }
