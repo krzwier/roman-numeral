@@ -62,4 +62,30 @@ class RomanNumeralTest {
     void DecimalToRoman_Input2_ReturnII() {
         AssertDecimalToRoman("II", 2);
     }
+
+    @Test
+    void DecimalToRoman_Input6_ReturnVI() {
+        AssertDecimalToRoman("VI", 6);
+    }
+
+    @Test
+    void DecimalToRoman_Input11_ReturnXI() {
+        AssertDecimalToRoman("XI", 11);
+    }
+
+    @Test
+    void DecimalToRoman_Input3_ReturnIII() {
+        AssertDecimalToRoman("III", 3);
+    }
+
+    @Test
+    void DecimalToRoman_Input7_ReturnVII() {
+        AssertDecimalToRoman("VII", 7);
+    }
+
+    @Test
+    void DecimalToRoman_Input8_ReturnVIII() {
+        AssertDecimalToRoman("VIII", 8);
+    }
+
 }
