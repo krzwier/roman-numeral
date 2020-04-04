@@ -5,6 +5,7 @@ public final class RomanNumeral {
     private final char ONE = 'I';
     private final char FIVE = 'V';
     private final char TEN = 'X';
+    private final char FIFTY = 'L';
 
 	public String DecimalToRoman(int i) {
 		if (i == 1) {
@@ -13,7 +14,10 @@ public final class RomanNumeral {
         if (i == 5) {
             return String.valueOf(FIVE);
         }
-        return String.valueOf(TEN);
+        if (i == 10) {
+            return String.valueOf(TEN);
+        }
+        return String.valueOf(FIFTY);
 	}
 
 }
