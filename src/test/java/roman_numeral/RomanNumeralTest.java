@@ -88,4 +88,14 @@ class RomanNumeralTest {
         AssertDecimalToRoman("VIII", 8);
     }
 
+    @Test
+    void DecimalToRoman_Input13_ReturnXIII() {
+        AssertDecimalToRoman("XIII", 13);
+    }
+
+    @Test
+    void DecimalToRoman_Input4_ReturnIV() {
+        AssertDecimalToRoman("IV", 4);
+    }
+
 }

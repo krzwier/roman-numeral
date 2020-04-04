@@ -45,6 +45,11 @@ public final class RomanNumeral {
             return String.valueOf(rn_mappings.get(trial_number)) + "II";
         }
 
+        // check for number 4, which is a special case
+        if (i==4) {
+            return "IV";
+        }
+
         // check to see if i is 3 greater than a basic numeral
         trial_number = i - 3;
         if (rn_mappings.containsKey(trial_number)) {
