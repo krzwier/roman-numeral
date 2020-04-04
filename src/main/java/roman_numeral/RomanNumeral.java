@@ -1,5 +1,7 @@
 package roman_numeral;
 
+import java.util.HashMap;
+
 public final class RomanNumeral {
 
     private final char ONE = 'I';
@@ -10,24 +12,33 @@ public final class RomanNumeral {
     private final char FIVE_HUNDRED = 'D';
     private final char ONE_THOUSAND = 'M';
 
-	public String DecimalToRoman(int i) {
+    private HashMap<Integer, Character> rn_mappings;
 
-        switch (i) {
-            case 1:
-                return String.valueOf(ONE);
-            case 5:
-                return String.valueOf(FIVE);
-            case 10:
-                return String.valueOf(TEN);
-            case 50: 
-                return String.valueOf(FIFTY);
-            case 100:
-                return String.valueOf(ONE_HUNDRED);
-            case 500:
-                return String.valueOf(FIVE_HUNDRED);
-            case 1000:
-                return String.valueOf(ONE_THOUSAND);
+    public RomanNumeral() {
+        // populate hash table with basic numerals
+        rn_mappings = new HashMap<>();
+        rn_mappings.put(1,ONE);
+        rn_mappings.put(5,FIVE);
+        rn_mappings.put(10,TEN);
+        rn_mappings.put(50,FIFTY);
+        rn_mappings.put(100,ONE_HUNDRED);
+        rn_mappings.put(500,FIVE_HUNDRED);
+        rn_mappings.put(1000,ONE_THOUSAND);
+    }
+
+	public String DecimalToRoman(final int i) {
+
+        // check to see if i is represented by a basic numeral
+        if (rn_mappings.containsKey(i)) {
+            return String.valueOf(rn_mappings.get(i));
         }
+        
+        // check to see if i is 1 greater than a basic numeral
+        int trial_number = i - 1;
+        if (rn_mappings.containsKey(trial_number)) {
+            return String.valueOf(rn_mappings.get(trial_number)) + "I";
+        }
+
         return null;
 	}
 

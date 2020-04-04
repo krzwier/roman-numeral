@@ -57,4 +57,9 @@ class RomanNumeralTest {
     void DecimalToRoman_Input1000_ReturnM() {
         AssertDecimalToRoman("M", 1000);
     }
+
+    @Test
+    void DecimalToRoman_Input2_ReturnII() {
+        AssertDecimalToRoman("II", 2);
+    }
 }
