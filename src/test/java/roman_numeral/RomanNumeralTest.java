@@ -103,4 +103,25 @@ class RomanNumeralTest {
         AssertDecimalToRoman("IX", 9);
     }
 
+    @Test
+    void DecimalToRoman_Input49_ReturnIL() {
+        AssertDecimalToRoman("IL", 49);
+    }
+
+    @Test
+    void DecimalToRoman_Input45_ReturnVL() {
+        AssertDecimalToRoman("VL", 45);
+    }
+
+    @Test
+    void DecimalToRoman_Input15_ReturnXV() {
+        AssertDecimalToRoman("XV", 15);
+    }
+
+    @Test
+    void DecimalToRoman_Input55_ReturnLV() {
+        AssertDecimalToRoman("LV", 55);
+    }
+
+    
 }
