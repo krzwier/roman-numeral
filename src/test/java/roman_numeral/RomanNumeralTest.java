@@ -123,5 +123,8 @@ class RomanNumeralTest {
         AssertDecimalToRoman("LV", 55);
     }
 
-    
+    @Test
+    void DecimalToRoman_Input40_ReturnXL() {
+        AssertDecimalToRoman("XL", 40);
+    }
 }

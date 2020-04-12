@@ -33,8 +33,14 @@ public final class RomanNumeral {
             return String.valueOf(rn_mappings.get(i));
         }
 
+        // check to see if i is 10 less than a basic numeral
+        int trial_number = i + 10;
+        if (rn_mappings.containsKey(trial_number)) {
+            return "X" + String.valueOf(rn_mappings.get(trial_number));
+        }
+
         // check to see if i is 5 less than a basic numeral
-        int trial_number = i + 5;
+        trial_number = i + 5;
         if (rn_mappings.containsKey(trial_number)) {
             return "V" + String.valueOf(rn_mappings.get(trial_number));
         }
@@ -68,6 +74,7 @@ public final class RomanNumeral {
         if (rn_mappings.containsKey(trial_number)) {
             return String.valueOf(rn_mappings.get(trial_number)) + "III";
         }
+
 
         return null;
 	}
