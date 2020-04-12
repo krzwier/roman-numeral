@@ -11,6 +11,8 @@ public final class RomanNumeral {
     private final char ONE_HUNDRED = 'C';
     private final char FIVE_HUNDRED = 'D';
     private final char ONE_THOUSAND = 'M';
+    private final int[] basic_numerals = {1000, 500, 100, 50, 10, 5, 1};
+    private final int[] repeating_numerals = {1000, 100, 10, 1};
 
     private HashMap<Integer, Character> rn_mappings;
 
@@ -33,67 +35,49 @@ public final class RomanNumeral {
             return String.valueOf(rn_mappings.get(i));
         }
 
-        // check to see if i is 10 less than a basic numeral
-        int trial_number = i + 10;
-        if (rn_mappings.containsKey(trial_number)) {
-            return "X" + String.valueOf(rn_mappings.get(trial_number));
+        int trial_number;
+        // check to see if i is a basic numeral minus another basic numeral
+        // start by checking the largest basic numeral
+        for (int n = 0; n < basic_numerals.length; n++ ){
+            trial_number = i + basic_numerals[n];
+            if (rn_mappings.containsKey(trial_number)) {
+                return String.valueOf(rn_mappings.get(basic_numerals[n])) +
+                    String.valueOf(rn_mappings.get(trial_number));
+            }
         }
 
-        // check to see if i is 5 less than a basic numeral
-        trial_number = i + 5;
-        if (rn_mappings.containsKey(trial_number)) {
-            return "V" + String.valueOf(rn_mappings.get(trial_number));
+        // check to see if i is a basic numeral plus another basic numeral
+        // start by checking the smallest basic numeral
+        for (int n = basic_numerals.length - 1; n >= 0; n--) {
+            trial_number = i - basic_numerals[n];
+            if (rn_mappings.containsKey(trial_number)) {
+                return String.valueOf(rn_mappings.get(trial_number)) + 
+                    String.valueOf(rn_mappings.get(basic_numerals[n]));
+            }
         }
 
-        // check to see if i is 1 less than a basic numeral
-        trial_number = i + 1;
-        if (rn_mappings.containsKey(trial_number)) {
-            return "I" + String.valueOf(rn_mappings.get(trial_number));
+        // check to see if i needs a repeating numeral
+        // start by checking the smallest repeating numeral
+        for (int n = repeating_numerals.length - 1; n >= 0; n--) {
+            // check for repeating numeral times 2
+            trial_number = i - (repeating_numerals[n] * 2);
+            if (rn_mappings.containsKey(trial_number)) {
+                return String.valueOf(rn_mappings.get(trial_number)) + 
+                    String.valueOf(rn_mappings.get(repeating_numerals[n])) +
+                    String.valueOf(rn_mappings.get(repeating_numerals[n]));
+            }
+
+            // check for repeating numeral times 3
+            trial_number = i - (repeating_numerals[n] * 3);
+            if (rn_mappings.containsKey(trial_number)) {
+                return String.valueOf(rn_mappings.get(trial_number)) + 
+                    String.valueOf(rn_mappings.get(repeating_numerals[n])) +
+                    String.valueOf(rn_mappings.get(repeating_numerals[n])) +
+                    String.valueOf(rn_mappings.get(repeating_numerals[n]));
+            }
         }
 
-        // check to see if i is 1 greater than a basic numeral
-         trial_number = i - 1;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "I";
-        }
-
-
-        // check to see if i is 2 greater than a basic numeral
-        trial_number = i - 2;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "II";
-        }
-
-        // check to see if i is 3 greater than a basic numeral
-        trial_number = i - 3;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "III";
-        }
-
-        // check to see if i is 5 more than a basic numeral
-        trial_number = i - 5;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "V";
-        }
-
-        // check to see if i is 10 more than a basic numeral
-        trial_number = i - 10;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "X";
-        }
-
-        // check to see if i is 10 more than a basic numeral
-        trial_number = i - 20;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "XX";
-        }
-
-        // check to see if i is 10 more than a basic numeral
-        trial_number = i - 30;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "XXX";
-        }
-
+        
 
         return null;
 	}
