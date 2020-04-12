@@ -127,4 +127,24 @@ class RomanNumeralTest {
     void DecimalToRoman_Input40_ReturnXL() {
         AssertDecimalToRoman("XL", 40);
     }
+
+    @Test
+    void DecimalToRoman_Input60_ReturnLX() {
+        AssertDecimalToRoman("LX", 60);
+    }
+
+    @Test
+    void DecimalToRoman_Input20_ReturnXX() {
+        AssertDecimalToRoman("XX", 20);
+    }
+
+    @Test
+    void DecimalToRoman_Input70_ReturnLXX() {
+        AssertDecimalToRoman("LXX", 70);
+    }
+
+    @Test
+    void DecimalToRoman_Input80_ReturnLXXX() {
+        AssertDecimalToRoman("LXXX", 80);
+    }
 }

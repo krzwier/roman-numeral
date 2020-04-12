@@ -57,11 +57,6 @@ public final class RomanNumeral {
             return String.valueOf(rn_mappings.get(trial_number)) + "I";
         }
 
-        // check to see if i is 5 more than a basic numeral
-        trial_number = i - 5;
-        if (rn_mappings.containsKey(trial_number)) {
-            return String.valueOf(rn_mappings.get(trial_number)) + "V";
-        }
 
         // check to see if i is 2 greater than a basic numeral
         trial_number = i - 2;
@@ -73,6 +68,30 @@ public final class RomanNumeral {
         trial_number = i - 3;
         if (rn_mappings.containsKey(trial_number)) {
             return String.valueOf(rn_mappings.get(trial_number)) + "III";
+        }
+
+        // check to see if i is 5 more than a basic numeral
+        trial_number = i - 5;
+        if (rn_mappings.containsKey(trial_number)) {
+            return String.valueOf(rn_mappings.get(trial_number)) + "V";
+        }
+
+        // check to see if i is 10 more than a basic numeral
+        trial_number = i - 10;
+        if (rn_mappings.containsKey(trial_number)) {
+            return String.valueOf(rn_mappings.get(trial_number)) + "X";
+        }
+
+        // check to see if i is 10 more than a basic numeral
+        trial_number = i - 20;
+        if (rn_mappings.containsKey(trial_number)) {
+            return String.valueOf(rn_mappings.get(trial_number)) + "XX";
+        }
+
+        // check to see if i is 10 more than a basic numeral
+        trial_number = i - 30;
+        if (rn_mappings.containsKey(trial_number)) {
+            return String.valueOf(rn_mappings.get(trial_number)) + "XXX";
         }
 
 
