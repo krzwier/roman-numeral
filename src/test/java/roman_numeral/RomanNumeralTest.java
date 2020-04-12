@@ -98,4 +98,9 @@ class RomanNumeralTest {
         AssertDecimalToRoman("IV", 4);
     }
 
+    @Test
+    void DecimalToRoman_Input9_ReturnIX() {
+        AssertDecimalToRoman("IX", 9);
+    }
+
 }
