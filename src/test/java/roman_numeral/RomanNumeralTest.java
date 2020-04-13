@@ -147,4 +147,24 @@ class RomanNumeralTest {
     void DecimalToRoman_Input80_ReturnLXXX() {
         AssertDecimalToRoman("LXXX", 80);
     }
+
+    @Test
+    void DecimalToRoman_Input900_ReturnCM() {
+        AssertDecimalToRoman("CM", 900);
+    }
+
+    @Test
+    void DecimalToRoman_Input990_ReturnXM() {
+        AssertDecimalToRoman("XM", 990);
+    }
+
+    @Test
+    void DecimalToRoman_Input950_ReturnLM() {
+        AssertDecimalToRoman("LM", 950);
+    }
+
+    @Test
+    void DecimalToRoman_Input14_ReturnXIV() {
+        AssertDecimalToRoman("XIV", 14);
+    }
 }
