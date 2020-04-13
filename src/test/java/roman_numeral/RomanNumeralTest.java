@@ -167,4 +167,58 @@ class RomanNumeralTest {
     void DecimalToRoman_Input14_ReturnXIV() {
         AssertDecimalToRoman("XIV", 14);
     }
+
+    @Test
+    void DecimalToRoman_Input16_ReturnXVI() {
+        AssertDecimalToRoman("XVI", 16);
+    }
+
+    @Test
+    void DecimalToRoman_Input19_ReturnXIX() {
+        AssertDecimalToRoman("XIX", 19);
+    }
+
+    @Test
+    void DecimalToRoman_Input21_ReturnXXI() {
+        AssertDecimalToRoman("XXI", 21);
+    }
+
+    @Test
+    void DecimalToRoman_Input23_ReturnXXIII() {
+        AssertDecimalToRoman("XXIII", 23);
+    }
+
+    @Test
+    void DecimalToRoman_Input24_ReturnXXIV() {
+        AssertDecimalToRoman("XXIV", 24);
+    }
+
+    @Test
+    void DecimalToRoman_Input31_ReturnXXXI() {
+        AssertDecimalToRoman("XXXI", 31);
+    }
+    
+    @Test
+    void DecimalToRoman_Input28_ReturnXXVIII() {
+        AssertDecimalToRoman("XXVIII", 28);
+    }
+
+    @Test
+    void DecimalToRoman_Input29_ReturnXXIX() {
+        AssertDecimalToRoman("XXIX", 29);
+    }
+
+    @Test
+    void DecimalToRoman_Input39_ReturnXXXIX() {
+        AssertDecimalToRoman("XXXIX", 39);
+    }
+
+    @Test
+    void DecimalToRoman_Input54_ReturnLIV() {
+        AssertDecimalToRoman("LIV", 54);
+    }
+
+    
+    
+
 }

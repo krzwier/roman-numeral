@@ -67,7 +67,11 @@ public final class RomanNumeral {
             return answer;
         }
 
-        // RECURSIVE CASE
+        // RECURSIVE CASES
+        if (i - 50 > 0) {
+            return "L" + DecimalToRomanRecursive(i - 50);
+        }
+
         return "X" + DecimalToRomanRecursive(i - 10);
     }
 
@@ -124,19 +128,22 @@ public final class RomanNumeral {
         for (int n = repeating_numerals.length - 1; n >= 0; n--) {
             // check for repeating numeral times 2
             trial_number = i - (repeating_numerals[n] * 2);
-            if (rn_mappings.containsKey(trial_number)) {
-                return String.valueOf(rn_mappings.get(trial_number)) + 
+            if (rn_mappings.containsKey(trial_number) && 
+                    (repeating_numerals[n] <= trial_number)) {
+                return  String.valueOf(rn_mappings.get(trial_number)) +
                     String.valueOf(rn_mappings.get(repeating_numerals[n])) +
                     String.valueOf(rn_mappings.get(repeating_numerals[n]));
             }
 
             // check for repeating numeral times 3
             trial_number = i - (repeating_numerals[n] * 3);
-            if (rn_mappings.containsKey(trial_number)) {
-                return String.valueOf(rn_mappings.get(trial_number)) + 
+            if (rn_mappings.containsKey(trial_number) &&
+                    (repeating_numerals[n] <= trial_number)) {
+                return String.valueOf(rn_mappings.get(trial_number)) +
                     String.valueOf(rn_mappings.get(repeating_numerals[n])) +
                     String.valueOf(rn_mappings.get(repeating_numerals[n])) +
                     String.valueOf(rn_mappings.get(repeating_numerals[n]));
+                    
             }
         }
 
