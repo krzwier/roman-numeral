@@ -104,13 +104,13 @@ class RomanNumeralTest {
     }
 
     @Test
-    void DecimalToRoman_Input49_ReturnIL() {
-        AssertDecimalToRoman("IL", 49);
+    void DecimalToRoman_Input49_ReturnXLIX() {
+        AssertDecimalToRoman("XLIX", 49);
     }
 
     @Test
-    void DecimalToRoman_Input45_ReturnVL() {
-        AssertDecimalToRoman("VL", 45);
+    void DecimalToRoman_Input45_ReturnXLV() {
+        AssertDecimalToRoman("XLV", 45);
     }
 
     @Test
@@ -154,13 +154,13 @@ class RomanNumeralTest {
     }
 
     @Test
-    void DecimalToRoman_Input990_ReturnXM() {
-        AssertDecimalToRoman("XM", 990);
+    void DecimalToRoman_Input990_ReturnCMXC() {
+        AssertDecimalToRoman("CMXC", 990);
     }
 
     @Test
-    void DecimalToRoman_Input950_ReturnLM() {
-        AssertDecimalToRoman("LM", 950);
+    void DecimalToRoman_Input950_ReturnCML() {
+        AssertDecimalToRoman("CML", 950);
     }
 
     @Test
@@ -218,7 +218,25 @@ class RomanNumeralTest {
         AssertDecimalToRoman("LIV", 54);
     }
 
-    
+    @Test
+    void DecimalToRoman_Input400_ReturnCD() {
+        AssertDecimalToRoman("CD", 400);
+    }
+
+    @Test
+    void DecimalToRoman_Input1459_ReturnMCDLIX() {
+        AssertDecimalToRoman("MCDLIX", 1459);
+    }
+
+    @Test
+    void DecimalToRoman_Input1959_ReturnMCMLIX() {
+        AssertDecimalToRoman("MCMLIX", 1959);
+    }
+
+    @Test
+    void DecimalToRoman_Input99_ReturnXCIX() {
+        AssertDecimalToRoman("XCIX", 99);
+    }
     
 
 }
