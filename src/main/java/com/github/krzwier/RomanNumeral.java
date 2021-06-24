@@ -1,4 +1,4 @@
-package roman_numeral;
+package com.github.krzwier;
 
 import java.util.HashMap;
 
@@ -77,6 +77,13 @@ public final class RomanNumeral {
         return "I" + DecimalToRomanRecursive(i - 1);
 
         
+    }
+
+    public static void main(String[] args) {
+        RomanNumeral rn = new RomanNumeral();
+        for (int i=1; i <= 3000; i++){
+            System.out.print(rn.DecimalToRoman(i) + " ");
+        }
     }
 
 }
